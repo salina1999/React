@@ -7,9 +7,6 @@ function App() {
   
   //let post = '블로그 글 제목';
 
-  let [글제목, set글제목1] = useState(['남자 코트 추천', '강남 우동맛집', '파이썬독학']); // ['남자코트추천', 함수] 남음
-  
- 
   // state : 자료(변수) 보관
   // usestate사용
   // 1. import usestate
@@ -23,6 +20,7 @@ function App() {
   // let a = num[0]; 
   // let c = num[1];
 
+  let [글제목, set글제목] = useState(['남자 코트 추천', '강남 우동맛집', '파이썬독학']); // ['남자코트추천', 함수] 남음
   let[따봉, 따봉변경] = useState(0);
 
   function 함수(){  // onClick안에는 무조건 함수만 가능 
@@ -33,7 +31,20 @@ function App() {
     <div className="App"> 
       <div className="black-nav">
         <h4>ReactBlog</h4>
-      </div>
+        </div>
+
+        <button onClick={()=>{
+
+          let arr =[1, 2, 3]; // 1,2,3이라는 값이 Ram이란 공간에 저장되어있고 arr에는 1,2,3이 있는 위치가 저장되어있음
+
+          let copy = [...글제목]; // 기존state == 신규state는 변환 안해줘서 ...문법 사용 그냥 글제목 적으면 log에 true뜸
+          copy[0] = '여자코트 추천';
+          console.log(copy==글제목);
+          set글제목(copy);
+        }}>
+          글수정
+        </button>
+     
       {/* <h4 style={ { color : 'red', fontSize : '16px' } }>{ post }</h4> */}
       <div className='list'>
         <h4>{글제목[0]}<span onClick={함수}>👍</span>{ 따봉 }</h4>
@@ -44,11 +55,31 @@ function App() {
         <p>2월 17일</p>
       </div>
       <div className='list'>
-        <h4>{글제목[3]}<span onClick={() => {따봉변경(따봉+1)}}>👍</span>{ 따봉 }</h4>
+        <h4>{글제목[3]}<span onClick={() => {따봉변경(따봉+1)} }>👍</span>{ 따봉 }</h4>
         <p>2월 17일</p>
       </div>
+      {/* component 컴포넌트 : html더러워서 축약함 
+          1. function 만들고
+          2. return() 안에 html담기
+          3. <함수명></함수명? 쓰기
+      */}
+      <Modal></Modal>
+      
     </div>
   );
+
+  function Modal(){
+    return (
+    // <></> : 의미없는 div가 쓰기싫을때
+    <>
+      <div className='modal'> 
+        <h4>제목</h4>
+        <p>닐짜</p>
+        <p>상세내용</p>
+      </div>
+      <div></div>
+    </>
+  )}
 }
 // JSX 문법
 // 1. class대신 className사용

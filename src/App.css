@@ -14,8 +14,15 @@ div{
 }
 .list{
   padding-left: 20px;
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid grey;
+}
+
+.modal{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #eee;
+  text-align: left;
 }
 
 .App-logo {
