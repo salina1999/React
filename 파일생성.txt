@@ -6,4 +6,4 @@
 node_modules폴더: 라이브러리 코드 보관함
 public 폴더: static 파일 모아놓은 곳 (html, 이미지 파일 보관)
 src 폴더: 코드짜는곳(소스코드 고관함) - App.js 메인페이지(자바스크립트파일)
-package.json: 프로젝트 정보기입(건들필요Xx)s
+package.json: 프로젝트 정보기입(건들필요Xx)
