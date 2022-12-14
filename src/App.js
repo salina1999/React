@@ -29,15 +29,15 @@ function App() {
       </div>
       {/* <h4 style={ { color : 'red', fontSize : '16px' } }>{ post }</h4> */}
       <div className='list'>
-        <h4>{글제목[0]}</h4>
+        <h4>{글제목[0]}<span>👍</span>{num}</h4>
         <p>2월 17일</p>
       </div>
       <div className='list'>
-        <h4>{글제목[2]}</h4>
+        <h4>{글제목[2]}<span>👍</span></h4>
         <p>2월 17일</p>
       </div>
       <div className='list'>
-        <h4>{글제목[3]}</h4>
+        <h4>{글제목[3]}<span>👍</span></h4>
         <p>2월 17일</p>
       </div>
     </div>
