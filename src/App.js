@@ -8,6 +8,7 @@ function App() {
   //let post = '블로그 글 제목';
 
   let [글제목, set글제목1] = useState(['남자 코트 추천', '강남 우동맛집', '파이썬독학']); // ['남자코트추천', 함수] 남음
+  
  
   // state : 자료(변수) 보관
   // usestate사용
@@ -22,6 +23,12 @@ function App() {
   // let a = num[0]; 
   // let c = num[1];
 
+  let[따봉, 따봉변경] = useState(0);
+
+  function 함수(){  // onClick안에는 무조건 함수만 가능 
+    console.log(1);  
+  }
+
   return (
     <div className="App"> 
       <div className="black-nav">
@@ -29,15 +36,15 @@ function App() {
       </div>
       {/* <h4 style={ { color : 'red', fontSize : '16px' } }>{ post }</h4> */}
       <div className='list'>
-        <h4>{글제목[0]}<span>👍</span>{num}</h4>
+        <h4>{글제목[0]}<span onClick={함수}>👍</span>{ 따봉 }</h4>
         <p>2월 17일</p>
       </div>
       <div className='list'>
-        <h4>{글제목[2]}<span>👍</span></h4>
+        <h4>{글제목[2]}<span onClick={() => { console.log(10) }} >👍</span>{ 따봉 }</h4>
         <p>2월 17일</p>
       </div>
       <div className='list'>
-        <h4>{글제목[3]}<span>👍</span></h4>
+        <h4>{글제목[3]}<span onClick={() => {따봉변경(따봉+1)}}>👍</span>{ 따봉 }</h4>
         <p>2월 17일</p>
       </div>
     </div>
